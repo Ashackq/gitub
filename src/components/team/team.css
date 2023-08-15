@@ -1,0 +1,42 @@
+.team-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .team-member {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .team-member h2 {
+    margin: 5px 0;
+  }
+  
+  .team-member p {
+    color: #888;
+  }
+  
+  .president {
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
