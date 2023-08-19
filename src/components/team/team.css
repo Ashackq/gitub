@@ -5,8 +5,9 @@
   
   h1 {
     margin-bottom: 20px;
+    color: #fff;
   }
-  
+
   .team-member {
     display: inline-block;
     margin: 20px;
@@ -16,13 +17,14 @@
   .team-member img {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+    border-radius: 25%;
     object-fit: cover;
     margin-bottom: 10px;
   }
   
   .team-member h2 {
     margin: 5px 0;
+    color: #fff;
   }
   
   .team-member p {

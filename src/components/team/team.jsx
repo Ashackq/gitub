@@ -4,16 +4,16 @@ import './team.css';
 
 const Team = () => {
   const team = [
-    { name: 'President Name', role: 'President', photo: 'president.jpg' },
-    { name: 'Member 1', role: 'Member', photo: 'member1.jpg' },
-    { name: 'Member 2', role: 'Member', photo: 'member2.jpg' },
-    { name: 'Member 3', role: 'Member', photo: 'member3.jpg' },
-    { name: 'Member 4', role: 'Member', photo: 'member4.jpg' },
+    { name: 'Gauri Ket', role: 'President', photo: 'member4.jpg' },
+    { name: 'Aman Singh', role: 'Vice President', photo: 'member1.jpg' },
+    { name: 'Sanket', role: 'Design Head', photo: 'member2.jpg' },
+    { name: 'Rishab Jain', role: 'Treasurer', photo: 'member3.jpg' },
+    { name: 'Akash Patel', role: 'Management Head', photo: 'president.jpg' },
   ];
 
   return (
     <div className="team-page">
-      <h1>Our Team</h1>
+      <h1>Meet our Team</h1>
       <div className="team-member president">
         <img src={require(`./photos/${team[0].photo}`)} alt={team[0].name} />
         <h2>{team[0].name}</h2>

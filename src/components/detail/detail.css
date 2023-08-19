@@ -1,0 +1,28 @@
+.details-container {
+  text-align: center;
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+
+.details-container p {
+  position: relative;
+  font-size: 25px;
+  font-family: "lora";
+  letter-spacing:4px;
+  line-height: 39px ;
+}
+
+.details-container hr { 
+  margin-top: 0.1em;
+  margin-bottom: 0.5em;
+  margin-left: 485px;
+  margin-right: 485px;
+  border-width: 1px;
+ border-color: aqua;
+} 

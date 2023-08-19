@@ -1,0 +1,7 @@
+.im{
+    display: flex;
+    flex-direction: row;
+    height: 651px;
+    margin: 0 auto;
+    justify-content: center;
+}

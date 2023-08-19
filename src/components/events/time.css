@@ -1,0 +1,141 @@
+.upcoming-events-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 391px;
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  font-family: "lora";
+}
+
+
+.event {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.event:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(127, 105, 210, 0.358);
+}
+
+h2 {
+  font-size: 25px;
+  margin-bottom: 25px;
+  color: #f0edee;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 17px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.countdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 15px;
+  border-collapse: separate;
+  border-spacing: 10px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+
+.countdown-table td {
+  padding: 10px;
+  font-size: 15px;
+  color: #333;
+  border-top: 1px solid #ddd;
+  margin: 5px;
+  width: 50px;
+}
+.countdown-table td:last-child {
+  border-right: none;
+}
+
+.scroll-container {
+  max-height: 391px;
+  overflow: auto;
+}
+
+.countdown-table tr:nth-child(2) td {
+  color: #777;
+  font-weight: bold;
+  border-top: none;
+}
+
+.countdown-table td:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+.event-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.event-details {
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+}
+
+.event-details a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.event-details a:hover {
+  color: #1f618d;
+}
+
+.event-details p {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .upcoming-events-container {
+    padding: 15px;
+  }
+  
+  .event {
+    padding: 15px;
+  }
+  
+  h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .countdown-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
