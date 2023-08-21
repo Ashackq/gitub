@@ -45,8 +45,8 @@ const activeProjects = [
   //   endDate: '2023-11-30',
   // },
 
-    {name: 'Project B'},
-    {name: 'Project B'},
+    "ProjectA"
+    
 ];
 const ome = () => (
   <div className="ome">
