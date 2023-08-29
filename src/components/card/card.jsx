@@ -2,32 +2,41 @@ import React from 'react';
 import './card.css';
 
 const possibleColors = [
-    "#F7E2AD",
+  "#241833",
+  "#1c282c",
+  "#2d161f",
+  "#312a2d",
+  "#312722"
+];
 
-  ];
+const getRandomColor = (index) => {
+  const colorIndex = index % possibleColors.length;
+  return possibleColors[colorIndex];
+};
 
-const getRandomColor = () => {
-    return possibleColors[Math.floor(Math.random() * possibleColors.length)];
-  };
-
-
-  const Card = ({ activeProjects }) => {
-    
-    const randomColor = getRandomColor();
-    return (
-      <div className="App">
-        <h1>Following is the list of <br />projects:</h1>
-        <div className="projects-container">
-             <div className="active-project-card" style={{ backgroundColor: randomColor }}>
-                <h2>Active Projects</h2>
-                    {activeProjects.map((name, index) => (
-                <p key={index}> {name}</p>
-                ))}
-            </div>
-        </div>
+const Card = ({ cardData }) => {
+  return (
+    <div className="App">
+      <h1>Following is the list of <br/>projects:</h1><br/><br/><br/><br/>
+      <div className="projects-container">
+        {cardData.map((activeProjects, index) => (
+          <div key={index} className="group-container">
+            {activeProjects.map((projectNames, cardIndex) => {
+              const randomColor = getRandomColor(cardIndex);
+              return (
+                <div className="active-project-card" style={{ backgroundColor: randomColor }} key={cardIndex}>
+                  <h2>Active Projects</h2>
+                  {projectNames.map((name, projectIndex) => (
+                    <p key={projectIndex}> {name}</p>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+        ))}
       </div>
-    );
-  };
-
+    </div>
+  );
+};
 
 export default Card;

@@ -6,8 +6,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1b151f;
+  overflow-y: scroll; 
 }
 
+
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+
+.example {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

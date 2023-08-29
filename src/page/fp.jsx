@@ -2,7 +2,9 @@ import React from 'react';
 import {Detail} from '../components';
 
 const fp = () => (
+  
   <div className="fp">
+    <Detail count="2" hrenable="none" wordColors={[]}/>
       <Detail heading="<Future Plans>" hfsize="64px" hrmarl="485px" hrmarr="485px" spcolor="#F8C43F" wordColors={[{word:"Theoretical Mathematics",scolor:"#4E598C"},
       {word:"innovative project ideas",scolor:"#5F0A87"},
       {word:"Indian Statistical Institute",scolor:"#F5FFC6"}]} 

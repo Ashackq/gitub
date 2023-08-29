@@ -2,15 +2,19 @@ import React from 'react'
 import {Time,Detail} from '../components';
 import kpit from '../ass/kpit.jpg';
 import './ab.css';
+
+
 const ev = () => {
   return (
     <div>
+      <div class="ll">
       <Time events={[
-    { name: 'Olymπad', date: '2023-09-01T12:00:00' },
-    { name: 'Treasure Hunt', date: '2023-09-15T18:30:00' },
+    { name: 'Olymπad', date: '2023-09-01T12:00:00',id:1 },
+    // { name: 'Treasure Hunt', date: '2023-08-25T16:00:00' ,id:2},
   ]}/>
+  </div>
 
-
+    
     <Detail count="4" hrenable="none" wordColors={[]}/>
     <Detail heading="<Past Events>" hfsize="64px" hrmarl="485px" hrmarr="485px" spcolor="#F8C43F" wordColors={[]} />
     <Detail count="4" hrenable="none" wordColors={[]}/>

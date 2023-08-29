@@ -1,6 +1,6 @@
 import React from 'react';
-import { Team ,Navbar} from './components';
-import {A,H,E,F} from './page'
+import { Navbar,Team} from './components';
+import {A,H,E,F,C} from './page'
 import { Route,Routes, BrowserRouter } from 'react-router-dom';
 
 import './App.css';
@@ -8,7 +8,6 @@ import './App.css';
 const App = () => (
   
       <>
-        
     <BrowserRouter>
       <Navbar />
         <Routes>
@@ -16,10 +15,12 @@ const App = () => (
           <Route path="/About" element={<A/>} />
           <Route path="/Event" element={<E/>} />
           <Route path="/Teams" element={<Team/>} />
-          <Route path="/Con" element={<Team/>} />
+          <Route path="/Con" element={<C/>} />
           <Route path="/Fut" element={<F/>} />
+          <Route path="/Event/:eventId"  />
         </Routes>
     </BrowserRouter>
+    <footer/>
     </>
   
 );

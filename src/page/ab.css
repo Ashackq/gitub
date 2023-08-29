@@ -5,3 +5,67 @@
     margin: 0 auto;
     justify-content: center;
 }
+
+.cover{
+    height: 619px;
+    width: 100%;
+    position: relative;
+    top: -20px;
+    
+}
+
+.container {
+    
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .centered {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .centered h1 {
+    font-size: 60px;
+    padding-bottom: 0px;
+    line-height: 70.31px;
+    letter-spacing: 20px;
+    font-weight: 600;
+    margin: 0;
+    position: relative;
+    top: 100px;
+  }
+
+  .centered p{
+    position: relative;
+    top: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30.72px;
+    letter-spacing: 9px;
+    font-family: "lora";
+  }
+
+  .snap{
+    font-size: 80px;
+    letter-spacing: -38px;
+    position: relative;
+    top:110px;
+    font-weight: 500;
+  }
+
+  .l{
+    right:260px;
+  }
+
+  .r{
+    left: 210px;
+    top: -106px;
+  }
+
+  .ll{
+    margin-top: -123.5px;
+  }

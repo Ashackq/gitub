@@ -8,13 +8,16 @@
   font-family: Arial, sans-serif;
   color: #333;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 391px;
+  height: 330px;
   position: relative;
   top: 100px;
   margin: 0 auto;
   font-family: "lora";
 }
 
+/* .event-link {
+  position: relative;
+} */
 
 .event {
   margin: 20px;
@@ -29,6 +32,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  /* transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; */
 }
 
 .event:hover {
@@ -58,6 +62,13 @@ h3 {
   border-spacing: 10px;
   margin-right: 100px;
   margin-left: 100px;
+
+  /* position: absolute;
+  top: 100%; /* Position below the event card */
+  /* left: 50%;
+  transform: translateX(-50%) translateY(-20px); /* Initial position above */
+  /* opacity: 0;
+  visibility: hidden;  */
 }
 
 
@@ -69,13 +80,29 @@ h3 {
   margin: 5px;
   width: 50px;
 }
+
+/* .event:hover .countdown-table {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  visibility: visible;
+} */
 .countdown-table td:last-child {
   border-right: none;
 }
 
 .scroll-container {
   max-height: 391px;
-  overflow: auto;
+
+  overflow-y: scroll;
+}
+
+.scroll-container::-webkit-scrollbar{
+    display: none;
+}
+
+.scroll-container{
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
 }
 
 .countdown-table tr:nth-child(2) td {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import logo from '../../ass/logo.jpg';
+import logo1 from '../../ass/logo1.jpg';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 
@@ -11,20 +12,20 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbar-links_logo">
         <Link to="/">
-          <img src={2} alt='loo' />
+          <img src={logo} alt='loo' />
         </Link>
       </div>
       <div className="navbar-links">
         <div className="navbar-links_container">
           <p><Link to="/About">About</Link></p>
-          <p><Link to="/Event">Event</Link></p>
+          <p><Link to="/Event">Events</Link></p>
           <p><Link to="/Teams">Teams</Link></p>
-          <p><Link to="/Con">Lets Connect</Link></p>
-           {/* <p><Link to="/Fut">Future Plans</Link></p> */}
+          <p><Link to="/Con">Let's Connect</Link></p>
+           <p><Link to="/Fut">Future Plans</Link></p>
         </div>
       </div>
-      <div className="navbar-links_logo">
-        <img src={2} alt='mitloo' />
+      <div className="navbar-links_logo1">
+        <img src={logo1} alt='mitloo' />
       </div>
       <div className="navbar-menu">
         {toggleMenu
@@ -36,12 +37,13 @@ const Navbar = () => {
               <p><Link to="/About">About</Link></p>
               <p><Link to="/Event">Event</Link></p>
               <p><Link to="/Teams">Teams</Link></p>
-              <p><Link to="/Con">Lets Connect</Link></p>
+              <p><Link to="/Con">Let's Connect</Link></p>
               <p><Link to="/Fut">Future Plans</Link></p>
             </div>
           </div>
         )}
       </div>
+      
     </div>
   );
 };

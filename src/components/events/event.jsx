@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./time.css";
+import { Link } from 'react-router-dom';
 
 const UpcomingEventsContainer = ({events}) => {
   
@@ -36,18 +37,26 @@ const UpcomingEventsContainer = ({events}) => {
 
   return (
     <div className="upcoming-events-container">
+      
       <h2>Upcoming Events</h2>
+      
       <div className="scroll-container">
+     
         {eventsWithTimeRemaining.map(event => (
-          <div key={event.name} className="event">
+           <Link to={`./event${event.id}`}>
+      
+          <div className="event"  key={event.name} >
             <h3>{event.name}</h3>
+            
             <table className="countdown-table">
+              
               <tr>
-                  <th>Days</th>
-                  <th>Hours</th>
-                  <th>Minutes</th>
-                  <th>Seconds</th>
+                  <td>Days</td>
+                  <td>Hours</td>
+                  <td>Minutes</td>
+                  <td>Seconds</td>
                 </tr>
+
               <tbody>
               
                 <tr>
@@ -58,10 +67,15 @@ const UpcomingEventsContainer = ({events}) => {
                 </tr>
                 
               </tbody>
+              
             </table>
+            
           </div>
+         
+          </Link>
         ))}
       </div>
+      
     </div>
   );
 };

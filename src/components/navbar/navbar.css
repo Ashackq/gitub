@@ -2,32 +2,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 2rem 6rem;
+    background-color: black;
 }
+
+
 
 .navbar-links {
     flex: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    
 }
 
-a{
+a {
     text-decoration: none;
     color: #fff;
+    transition: color 0.3s;
 }
+
+
 
 .navbar-links_logo {
     margin-right: 2rem;
-    
 }
 
 .navbar-links_logo img {
-    width: 62.56px;
-    height: 16.02px;
-    
+    width: 170px;
+}
+
+.navbar-links_logo1 img {
+    width: 95px;
 }
 
 .navbar-links_container {
@@ -36,7 +41,8 @@ a{
     justify-content: flex-end;
 }
 
-.navbar-sign {
+.navbar-sign,
+.navbar-menu_container-links-sign {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -51,15 +57,43 @@ a{
     font-size: 18px;
     line-height: 25px;
     text-transform: capitalize;
-
-    margin: 0 1rem;
+    margin: 0 1.5rem;
     cursor: pointer;
+    transition: color 0.3s;
 }
 
+.navbar-links_container p:hover,
+.navbar-sign p:hover,
+.navbar-menu_container p:hover {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+}
+
+.navbar-links_container p::after,
+.navbar-sign p::after,
+.navbar-menu_container p::after{
+    content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar-links_container p:hover::after,
+.navbar-sign p:hover::after,
+.navbar-menu_container p:hover::after{
+    transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 .navbar-menu {
     margin-left: 1rem;
-
     display: none;
     position: relative;
 }
@@ -73,7 +107,6 @@ a{
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    
     text-align: end;
     background: var(--color-footer);
     padding: 2rem;
@@ -83,22 +116,13 @@ a{
     margin-top: 1rem;
     min-width: 210px;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0,0, 0,0.2);
-}
-
-.navbar-menu_container p {
-    margin: 1rem 0;
-}
-
-.navbar-menu_container-links-sign {
-    display: none;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 1050px) {
     .navbar-links_container {
         display: none;
     }
-
     .navbar-menu {
         display: flex;
     }
@@ -114,18 +138,13 @@ a{
     .navbar {
         padding: 2rem;
     }
-
     .navbar-sign {
         display: none;
     }
-
     .navbar-menu_container {
         top: 20px;
     }
-
     .navbar-menu_container-links-sign {
         display: block;
     }
-} 
-
- 
+}
