@@ -1,5 +1,6 @@
 import React from 'react';
-import {Detail,Card,Time,Hero} from '../components';
+// import {Detail,Card,Time,Hero} from '../components';
+import {Detail,Card,Time} from '../components';
 import cover from '../ass/cover.jpg';
 import "./ab.css";
 
@@ -25,8 +26,8 @@ const ome = () => (
   ]}/>
   </div>
 
-    <Detail count="6" hrenable="none" wordColors={[]}/>
-      <Detail heading="<Notches on our belt>" hfsize="64px" hrmarl="485px" hrmarr="485px" spcolor="#F8C43F" wordColors={[{word:"17 major projects",scolor:"#F7E2AD"},
+     <Detail count="6" hrenable="none" wordColors={[]}/>
+      <Detail heading="<Notches on our belt>"  hrmarl="485px" hrmarr="485px" spcolor="#F8C43F" wordColors={[{word:"17 major projects",scolor:"#F7E2AD"},
       {word:"3 research papers",scolor:"#F7E2AD"}]} 
 
       description="<br><br>We at Numerates believe in skill-set building through experience and<br> hard work. This club brought in various project and research work, in<br> order to help its members in growing their understanding and<br> knowledge. In the last year, the club has undertaken 17 major projects<br> and 3 research papers have been published.
@@ -34,8 +35,8 @@ const ome = () => (
       color="#fff"/>
 
       <Card cardData={cardData}  />
-      <Detail count="10" hrenable="none" wordColors={[]}/>
-  </div>    
+       <Detail count="10" hrenable="none" wordColors={[]}/>
+   </div>    
 );
 
 export default ome;
