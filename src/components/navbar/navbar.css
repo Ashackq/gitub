@@ -1,9 +1,14 @@
 .navbar {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 6rem;
+    height: 10vh;
+    width: 75vw;
+    margin: 20px 10px 10px 100px;
+    padding: 1rem 4rem;
     background-color: black;
+    border-radius: 40px;
 }
 
 
@@ -28,11 +33,11 @@ a {
 }
 
 .navbar-links_logo img {
-    width: 170px;
+    width: 150px;
 }
 
 .navbar-links_logo1 img {
-    width: 95px;
+    height: 50px;
 }
 
 .navbar-links_container {
