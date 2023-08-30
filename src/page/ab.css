@@ -15,19 +15,19 @@
 }
 
 .container {
-  width: 100%;
+  
   position: relative;
   text-align: center;
   color: white;
 }
 
-/* .keyboard {
+.keyboard {
   
   position: absolute;
   right: 0;
   margin: 0;
   
-} */
+}
 
 .centered {
   width: 100%;
@@ -129,7 +129,6 @@
   .snap{
     font-size: 40px;
     letter-spacing: -18px;
-    
   }
 }
 
