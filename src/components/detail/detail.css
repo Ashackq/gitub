@@ -9,20 +9,72 @@
   margin: 0 auto;
 }
 
+.q{ 
+  display: block;
+  font-size: 64px;
+  font-weight: bold; 
+}
 
-.details-container p {
+
+.details-container  {
   position: relative;
   font-size: 25px;
-  font-family: "lora";
+
   letter-spacing:4px;
   line-height: 39px ;
 }
 
+.c {
+
+  font-size: 25px;
+  font-family: "lora";
+
+}
+
+
+
 .details-container hr { 
-  margin-top: 0.1em;
+  margin-top: 1em;
   margin-bottom: 0.5em;
-  margin-left: 485px;
-  margin-right: 485px;
+  margin-left: 480px;
+  margin-right: 480px;
   border-width: 1px;
  border-color: aqua;
 } 
+
+
+@media (max-width: 768px) {
+  .details-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .c{
+    font-size: 16px;
+  }
+
+  .details-container hr {
+    width: 70%;
+  }
+}
+
+@media (max-width: 426px) {
+  .details-container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  hr {
+    display: none;
+  }
+  .c{
+    font-size: 16px;
+  }
+
+
+  .q{
+    font-size: 32px;
+    letter-spacing: normal;
+    margin-bottom: -10px;
+  }
+   
+}

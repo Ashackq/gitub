@@ -38,7 +38,7 @@ const ContactUs = () => {
     return (
       <div className="contact-us-container">
         <h1 className="contact-us-header">Contact Us</h1>
-        <p className="contact-info">If you have any questions or feedback, feel free to contact us:</p>
+        <p className="contact-info">If you have any questions or feedback<br/> feel free to contact us:</p>
         <p className="contact-info">Phone: 7069928282</p>
         <p className="contact-info">Address: 3rd Floor, Maitri Building, MIT-WPU </p>
   

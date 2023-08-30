@@ -35,10 +35,10 @@ const Details = ({ count, hfsize, heading,fds, description, hrmarl, hrmarr, pos,
   return (
     <div className="details-container" style={{ marginLeft: marginLeft, marginRight: marginRight, textAlign: pos }}>
 
-      <h2 className="center" style={{ color: spcolor, fontSize: hfsize, display: hrenable }}>{heading}</h2>
+      <p className="center q" style={{ color: spcolor, fontSize: hfsize, display: hrenable }}>{heading}</p>
       <hr style={{ display: hrenable, marginLeft: hrmarl, marginRight: hrmarr, borderColor: spcolor }} />
       {br()}
-      <p className="center" style={{ color: color, fontSize:fds }} dangerouslySetInnerHTML={getDescriptionWithColoredWords()} />
+      <p className="center c" style={{ color: color, fontSize:fds }} dangerouslySetInnerHTML={getDescriptionWithColoredWords()} />
     </div>
   );
 };
