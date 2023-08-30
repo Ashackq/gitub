@@ -52,7 +52,9 @@ const ev = () => {
     {word:"“Modern Portfolio Theory”",scolor:"#5BC4FF"},
     {word:"The Pi Day Quiz",scolor:"#5BC4FF"}]}/>
     <Detail count="10" hrenable="none" wordColors={[]}/>
+  
     </div>
+    
   )
 }
 
