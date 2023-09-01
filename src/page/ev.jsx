@@ -8,6 +8,7 @@ const ev = () => {
   return (
     <div>
       <div class="ll">
+        
       <Time events={[
     { name: 'Olymπad', date: '2023-09-01T12:00:00',id:1 },
     // { name: 'Treasure Hunt', date: '2023-08-25T16:00:00' ,id:2},
