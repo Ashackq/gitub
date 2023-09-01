@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import "./time.css";
+
 import { Link } from 'react-router-dom';
-import { Party } from '..';
 
 const UpcomingEventsContainer = ({events}) => {
-  
+
  
 
   const calculateTimeRemaining = (targetDate) => {
@@ -37,14 +37,16 @@ const UpcomingEventsContainer = ({events}) => {
   });
 
   return (
+    
     <div className="upcoming-events-container">
-      
+     
       <h2>Upcoming Events</h2>
-      
+    
+        
       <div className="scroll-container">
-        <Party/>
+        
         {eventsWithTimeRemaining.map(event => (
-           <Link to={`./event${event.id}`}>
+        <Link to={`./event${event.id}`}>
       
           <div className="event"  key={event.name} >
             <h3>{event.name}</h3>

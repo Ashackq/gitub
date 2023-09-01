@@ -1,18 +1,20 @@
-import React from 'react'
-import {Time,Detail} from '../components';
+import React  from "react";
+import {Time,Detail,PParty} from '../components';
 import kpit from '../ass/kpit.jpg';
 import './ab.css';
 
 
-const ev = () => {
+const Ev = () => {
+  // const targetRef = useRef(null);
   return (
     <div>
-      <div class="ll">
-        
+      <div class="ll" >
+      <PParty numberOfPieces={200} duration={3000} />
       <Time events={[
-    { name: 'Olymπad', date: '2023-09-01T12:00:00',id:1 },
-    // { name: 'Treasure Hunt', date: '2023-08-25T16:00:00' ,id:2},
+    { name: 'Olymπad', date: '2023-10-01T12:00:00',id:1 },
+    { name: 'Treasure Hunt', date: '2023-09-25T16:00:00' ,id:2},
   ]}/>
+ 
   </div>
 
     
@@ -59,4 +61,4 @@ const ev = () => {
   )
 }
 
-export default ev
+export default Ev

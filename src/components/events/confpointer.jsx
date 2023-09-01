@@ -1,93 +1,72 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import ReactCanvasConfetti from "react-canvas-confetti";
+import React, { Component } from 'react';
+import ConfettiGenerator from 'confetti-js';
+import './Confetti.css';
 
-const canvasStyles = {
-  position: "fixed",
-  pointerEvents: "none",
-  width: "100%",
-  height: "100%",
-  top: 0,
-  left: 0
-};
-
-function getAnimationSettings(angle, originX) {
-  return {
-    particleCount: 3,
-    angle,
-    spread: 55,
-    origin: { x: originX },
-    colors: ["#bb0000", "#ffffff"]
-  };
-}
-
-export default function SchoolPride() {
-  const refAnimationInstance = useRef(null);
-  const [intervalId, setIntervalId] = useState();
-  const targetRef = useRef(null);
-
-  const getInstance = useCallback((instance) => {
-    refAnimationInstance.current = instance;
-  }, []);
-
-  const nextTickAnimation = useCallback(() => {
-    if (refAnimationInstance.current) {
-      refAnimationInstance.current(getAnimationSettings(60, 0));
-      refAnimationInstance.current(getAnimationSettings(120, 1));
-    }
-  }, []);
-
-  const startAnimation = useCallback(() => {
-    if (!intervalId) {
-      setIntervalId(setInterval(nextTickAnimation, 16));
-      setTimeout(() => {
-        clearInterval(intervalId);
-        setIntervalId(null);
-      },100); //
-    }
-  }, [nextTickAnimation, intervalId]);
-
-  const pauseAnimation = useCallback(() => {
-    clearInterval(intervalId);
-    setIntervalId(null);
-  }, [intervalId]);
-
-  const stopAnimation = useCallback(() => {
-    clearInterval(intervalId);
-    setIntervalId(null);
-    refAnimationInstance.current && refAnimationInstance.current.reset();
-  }, [intervalId]);
-
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5
+class Confetti extends Component {
+  constructor(props) {
+    super(props);
+    this.confettiRef = React.createRef();
+    this.animationFrame = null;
+    
+    // Initialize confetti object here
+    const confettiSettings = {
+      target: this.confettiRef.current,
+      max: this.props.numberOfPieces,
     };
+    this.confetti = new ConfettiGenerator(confettiSettings);
+  }
 
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        startAnimation();
-        observer.unobserve(entries[0].target);
+  componentDidMount() {
+    const { numberOfPieces, duration } = this.props;
+    const confettiSettings = {
+      target: this.confettiRef.current,
+      max: numberOfPieces,
+    };
+    this.confetti = new ConfettiGenerator(confettiSettings);
+
+    const containerWidth = this.confettiRef.current.parentNode.offsetWidth;
+    this.confettiRef.current.width = containerWidth;
+
+    this.confetti.render();
+
+    this.animationFrame = requestAnimationFrame(this.animate);
+  }
+
+  animate = () => {
+    const { duration } = this.props;
+    const containerHeight = window.innerHeight;
+
+    let allParticlesGone = true;
+
+    this.confetti.confetti.forEach((particle) => {
+      particle.y += 2; // Adjust the speed if needed
+
+      if (particle.y <= containerHeight) {
+        allParticlesGone = false;
       }
-    }, options);
+    });
 
-    if (targetRef.current) {
-      observer.observe(targetRef.current);
+    this.confetti.render();
+
+    if (allParticlesGone) {
+      this.confetti.clear();
+      this.confettiRef.current.style.opacity = '0';
+      cancelAnimationFrame(this.animationFrame);
+    } else {
+      this.animationFrame = requestAnimationFrame(this.animate);
     }
+  };
 
-    return () => {
-      clearInterval(intervalId);
-      observer.disconnect();
-    };
-  }, [intervalId, startAnimation]);
+  componentWillUnmount() {
+    if (this.confetti) {
+      this.confetti.clear();
+    }
+    cancelAnimationFrame(this.animationFrame);
+  }
 
-  return (
-    <>
-      
-      <div  ref={targetRef}>
-        Scroll to this part to trigger the animation
-      </div>
-      <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
-    </>
-  );
+  render() {
+    return <canvas ref={this.confettiRef} className="confetti-container"></canvas>;
+  }
 }
+
+export default Confetti;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Detail,Party,PParty} from '../components';
+import {Detail} from '../components';
 // import dec from '../ass/dec.png';
 // import dec1 from '../ass/dec1.png';
 
@@ -77,9 +77,7 @@ const ab = () => (
         ]}
         count="0"/>
   
-  <Detail count="6" hrenable="none" wordColors={[]}/>
-
-  <PParty/>
+  <Detail count="6" hrenable="none" wordColors={[]}/>  
   </div>    
 );
 

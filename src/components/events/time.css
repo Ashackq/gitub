@@ -13,7 +13,9 @@
   top: 100px;
   margin: 0 auto;
   font-family: "lora";
+  z-index: 0;
 }
+
 
 /* .event-link {
   position: relative;
@@ -32,7 +34,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  /* transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; */
+  z-index: 2;
 }
 
 .event:hover {
