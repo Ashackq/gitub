@@ -30,8 +30,7 @@ const Ome = () => {
     </div>
     <div class="ll">
 
-    <Time events={[
-      { name: 'Treasure Hunt', date: '2023-08-25T16:00:00' }]} />
+    <Time events={[ { name: 'Treasure Hunt', date: '2023-08-25T16:00:00' ,id:2} ]} />
 
   </div>
 

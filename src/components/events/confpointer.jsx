@@ -1,72 +1,33 @@
-import React, { Component } from 'react';
-import ConfettiGenerator from 'confetti-js';
-import './Confetti.css';
+import React, { useState ,useEffect} from 'react';
+import Confetti from 'react-confetti';
+import './c.css'; // Create this CSS file for styling
 
-class Confetti extends Component {
-  constructor(props) {
-    super(props);
-    this.confettiRef = React.createRef();
-    this.animationFrame = null;
-    
-    // Initialize confetti object here
-    const confettiSettings = {
-      target: this.confettiRef.current,
-      max: this.props.numberOfPieces,
-    };
-    this.confetti = new ConfettiGenerator(confettiSettings);
-  }
+const ConfettiBar = () => {
+  const [isConfettiActive, setIsConfettiActive] = useState(false);
+  const [, setShowConfetti] = useState(true);
 
-  componentDidMount() {
-    const { numberOfPieces, duration } = this.props;
-    const confettiSettings = {
-      target: this.confettiRef.current,
-      max: numberOfPieces,
-    };
-    this.confetti = new ConfettiGenerator(confettiSettings);
-
-    const containerWidth = this.confettiRef.current.parentNode.offsetWidth;
-    this.confettiRef.current.width = containerWidth;
-
-    this.confetti.render();
-
-    this.animationFrame = requestAnimationFrame(this.animate);
-  }
-
-  animate = () => {
-    const { duration } = this.props;
-    const containerHeight = window.innerHeight;
-
-    let allParticlesGone = true;
-
-    this.confetti.confetti.forEach((particle) => {
-      particle.y += 2; // Adjust the speed if needed
-
-      if (particle.y <= containerHeight) {
-        allParticlesGone = false;
-      }
-    });
-
-    this.confetti.render();
-
-    if (allParticlesGone) {
-      this.confetti.clear();
-      this.confettiRef.current.style.opacity = '0';
-      cancelAnimationFrame(this.animationFrame);
-    } else {
-      this.animationFrame = requestAnimationFrame(this.animate);
-    }
+  useEffect(() => {
+    setTimeout(() => {
+      setShowConfetti(false);
+    }, 5000); // Turn off confetti after 5 seconds (adjust as needed)
+  }, []);
+  
+  const startConfetti = () => {
+    setIsConfettiActive(true);
+    setTimeout(() => setIsConfettiActive(false), 3000); // Stop after 3 seconds
   };
+  
 
-  componentWillUnmount() {
-    if (this.confetti) {
-      this.confetti.clear();
-    }
-    cancelAnimationFrame(this.animationFrame);
-  }
+  return (
+    <div className="confetti-container">
+      <button className="confetti-button" onClick={startConfetti}>
+        Start Confetti
+      </button>
+      <div className="confetti">
+        {isConfettiActive && <Confetti />}
+      </div>
+    </div>
+  );
+};
 
-  render() {
-    return <canvas ref={this.confettiRef} className="confetti-container"></canvas>;
-  }
-}
-
-export default Confetti;
+export default ConfettiBar;

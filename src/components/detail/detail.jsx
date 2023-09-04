@@ -38,6 +38,7 @@ const Details = ({ count, hfsize, heading,fds, description, hrmarl, hrmarr, pos,
       <p className="center q" style={{ color: spcolor, fontSize: hfsize, display: hrenable }}>{heading}</p>
       <hr style={{ display: hrenable, marginLeft: hrmarl, marginRight: hrmarr, borderColor: spcolor }} />
       {br()}
+      <br></br>
       <p className="center c" style={{ color: color, fontSize:fds }} dangerouslySetInnerHTML={getDescriptionWithColoredWords()} />
     </div>
   );

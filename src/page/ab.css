@@ -6,6 +6,11 @@
   justify-content: center;
 }
 
+.special{
+  margin-left:310px;
+   margin-right:310px
+}
+
 .cover{
   height: 619px;
   width: 100%;
@@ -35,6 +40,10 @@
   margin: 0;
   
 }
+.sparkle{
+  margin-Left:"150px"; 
+  margin-Right:"150px"
+ }
 
 .centered {
   width: 100%;
@@ -82,7 +91,7 @@
 }
 
 .ll{
-  margin-top: -123.5px;
+  margin-top: -123.5px
 }
 
 @media (max-width: 768px) {
@@ -100,7 +109,14 @@
   .ome{
     overflow-x: hidden;
   }
- 
+  .special{
+    margin-left:0px;
+     margin-right:0px
+  }
+  .sparkle{
+    margin-Left:"0px"; 
+    margin-Right:"0px"
+   }
 }
 
 @media (max-width: 426px) {
@@ -108,8 +124,17 @@
   .cover{
     height: 450px;
   }
-
- 
+  .im{
+    height:180px;
+    width: 180px;
+  }
+  .ev{
+    overflow-x: hidden;
+  }
+ .sparkle{
+  margin-Left:"0px"; 
+  margin-Right:"0px"
+ }
   .centered h1 {
     font-size: 16px;
     letter-spacing: 6px;
@@ -121,6 +146,10 @@
     font-size: 10px;
     letter-spacing: 4px;
     line-height: 15.72px;
+  }
+  .special{
+    margin-left:0px;
+     margin-right:0px
   }
 
   .l{
@@ -137,5 +166,6 @@
     font-size: 40px;
     letter-spacing: -18px;
   }
+  
 }
 

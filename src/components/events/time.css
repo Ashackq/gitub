@@ -169,3 +169,27 @@ h3 {
     
   }
 }
+
+@media (max-width: 426px) {
+
+  .event{
+    
+    padding: 10px;
+  }
+  h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .countdown-table td {
+    padding: 1px;
+    font-size: 12px;
+    
+  }
+}
+
