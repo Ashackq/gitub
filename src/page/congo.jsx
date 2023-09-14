@@ -13,7 +13,7 @@ const Certificates = () => {
         const [teamName,] = email.split('@');
         setUserTeamName(teamName);
         
-        const certificatesRef = storage.ref('certificates'); 
+        const certificatesRef = storage.ref(`certificates/${teamName}`); 
 
         certificatesRef.listAll().then((result) => {
           const urls = [];

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import {Detail,Card,Time,Hero} from '../components';
-import {Detail,Card,Time} from '../components';
+import {Detail,Card,Th} from '../components';
 import cover from '../ass/cover.jpg';
 import "./ab.css";
 
@@ -30,7 +30,7 @@ const Ome = () => {
     </div>
     <div class="ll">
 
-    <Time events={[ { name: 'Treasure Hunt', date: '2023-08-25T16:00:00' ,id:2} ]} />
+    <Th events={[ { name: 'Treasure Hunt',id:1} ]} />
 
   </div>
 

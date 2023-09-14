@@ -58,6 +58,9 @@
   hr {
     display: none;
   }
+  .q{
+    line-height: 50px;
+  }
 }
 
 @media (max-width: 426px) {
