@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import './time.css';
-import { Link } from 'react-router-dom';
-import Confetti from 'react-confetti';
+import React, { useState, useEffect, useRef } from "react";
+import "./time.css";
+import { Link } from "react-router-dom";
+import Confetti from "react-confetti";
 
 const UpcomingEventsContainer = ({ events }) => {
   const calculateTimeRemaining = (targetDate) => {
@@ -10,7 +10,9 @@ const UpcomingEventsContainer = ({ events }) => {
     const timeDiff = eventDate - now;
 
     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const hours = Math.floor(
+      (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
@@ -29,10 +31,12 @@ const UpcomingEventsContainer = ({ events }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setEventsWithTimeRemaining(events.map((event) => ({
-        ...event,
-        timeRemaining: calculateTimeRemaining(event.date),
-      })));
+      setEventsWithTimeRemaining(
+        events.map((event) => ({
+          ...event,
+          timeRemaining: calculateTimeRemaining(event.date),
+        }))
+      );
     }, 1000);
 
     return () => clearInterval(interval);
@@ -40,7 +44,8 @@ const UpcomingEventsContainer = ({ events }) => {
 
   const handleMouseMove = (event, index) => {
     const { clientX, clientY } = event;
-    const { left, top } = confettiContainerRefs.current[index].getBoundingClientRect();
+    const { left, top } =
+      confettiContainerRefs.current[index].getBoundingClientRect();
 
     const x = clientX - left;
     const y = clientY - top;
@@ -56,7 +61,12 @@ const UpcomingEventsContainer = ({ events }) => {
       <h2>Upcoming Events</h2>
       <div className="scroll-container">
         {eventsWithTimeRemaining.map((event, index) => (
-          <Link to={`./event${event.id}`} key={event.name}>
+          <a
+            href={event.link}
+            key={event.name}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div
               className="event"
               ref={(el) => (confettiContainerRefs.current[index] = el)}
@@ -73,11 +83,11 @@ const UpcomingEventsContainer = ({ events }) => {
                   initialVelocityY={5}
                   gravity={0.2}
                   style={{
-                    position: 'absolute',
+                    position: "absolute",
                     zIndex: -1,
-           
-                    height: '100%',
-                    width: '100%',
+
+                    height: "100%",
+                    width: "100%",
                   }}
                 />
               )}
@@ -99,7 +109,7 @@ const UpcomingEventsContainer = ({ events }) => {
                 </tbody>
               </table>
             </div>
-          </Link>
+          </a>
         ))}
       </div>
     </div>
