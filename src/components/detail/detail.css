@@ -58,6 +58,9 @@
   hr {
     display: none;
   }
+  .q{
+    line-height: 50px;
+  }
 }
 
 @media (max-width: 426px) {
@@ -77,6 +80,7 @@
     font-size: 32px;
     letter-spacing: normal;
     margin-bottom: -10px;
+    line-height: 50px;
   }
    
 }

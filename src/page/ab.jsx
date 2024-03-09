@@ -17,6 +17,7 @@ const ab = () => (
       <br></br>
       <br></br>
       <br></br>
+      <div className='special'>
       <Detail 
       count="3"
       heading="<Special Note>"
@@ -30,9 +31,9 @@ const ab = () => (
       description="The year from 2020 to 2022 was entirely under <br>pandemic situation. With the help and support of the<br> members, the club have survived and uplifted from <br>the pandemic. Various activities were conducted<br> despite of the outbreak of <br>coronavirus. 
       <br><br><br>The club is thankful for all the support and guidance received from the University and hope for further contributions to the community as whole."
       spcolor="#F8C43F"
-      marginLeft="310px" marginRight="310px"
+      
       color = "#fff"
-      /> 
+      /> </div>
       
 
     <Detail marginLeft="310px" marginRight="310px" hrmarl='10px' hrmarr='10px' spcolor="#F7E2AD" wordColors={[]}/>
@@ -77,7 +78,7 @@ const ab = () => (
         ]}
         count="0"/>
   
-  <Detail count="6" hrenable="none" wordColors={[]}/>
+  <Detail count="6" hrenable="none" wordColors={[]}/>  
   </div>    
 );
 
