@@ -51,7 +51,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  
 }
+
 .centered h1 {
   font-size: 60px;
   padding-bottom: 0px;
@@ -61,6 +63,7 @@
   margin: 0;
   position: relative;
   top: 100px;
+  font-family: "Urbanist", sans-serif;
 }
 
 .centered p{
@@ -92,6 +95,15 @@
 
 .ll{
   margin-top: -123.5px
+}
+
+.heading.anim::selection{
+  background-color: white;
+  color: black;
+}
+
+.heading{
+  color: #ffedfa;
 }
 
 @media (max-width: 768px) {
