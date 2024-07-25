@@ -61,9 +61,9 @@ const Ome = () => {
       text: {
         value: "INITIATE || IDEATE || INNOVATE",
       },
-      // scrollTrigger:{
-      //   trigger: headingRef.current
-      // }
+      scrollTrigger:{
+        trigger: ".heading"
+      }
     });
     
 
