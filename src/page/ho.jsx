@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 // import {Detail,Card,Time,Hero} from '../components';
 import { Detail, Card } from "../components";
 import cover from "../ass/cover.jpg";
 import "./ab.css";
+import {gsap, ScrollTrigger} from "gsap/all";
+import TextPlugin from "gsap/TextPlugin";
+import SplitType from "split-type";
 
 const cardData = [
   [
@@ -40,13 +43,68 @@ const cardData = [
   ],
 ];
 const Ome = () => {
+
+  const descriptionRef = useRef(null);
+  const headingRef = useRef(null);
+
+  useEffect(()=>{
+
+
+    const animTextDescription = new SplitType(descriptionRef.current, {types: "words, chars"});
+    const animTextHeading = new SplitType(headingRef.current, {types: "words, chars"});
+
+    gsap.registerPlugin(TextPlugin);
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".heading", {
+      duration: 3,
+      text: {
+        value: "INITIATE || IDEATE || INNOVATE",
+      },
+      scrollTrigger:{
+        trigger: ".heading"
+      }
+    });
+    
+
+    gsap.set(animTextDescription.chars, {
+      opacity: 0.1
+    });
+
+    gsap.to(animTextDescription.chars, {
+      opacity: 1,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: descriptionRef.current,
+        scrub: true,
+        start: "top 50%",
+        end: "bottom 65%"
+      }
+    });
+
+    gsap.set(animTextHeading.chars, {
+      y:100,
+    });
+
+    gsap.to(animTextHeading.chars, {
+      y: 0,
+      stagger: 0.05,
+      delay: 0.1,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: headingRef.current
+      }
+    });
+
+  });
+
   return (
     <div className="ome">
       <div className="keyboard">{/* <Hero/> */}</div>
       <div className="container">
         {<img className="cover" src={cover} alt="loo" />}
         <div className="centered">
-          <h1>INITIATE || IDEATE || INNOVATE</h1>
+          <h1 className="heading anim">Welcome to Numerates</h1>
           <div>
             <span className="snap l">&lt;&lt;</span>
             <p>
@@ -57,12 +115,16 @@ const Ome = () => {
           </div>
         </div>
       </div>
-      <div class="ll">
+      <div className="ll">
         {/* <Th events={[ { name: 'Treasure Hunt',id:1} ]} /> */}
       </div>
 
       <Detail count="6" hrenable="none" wordColors={[]} />
       <Detail
+        descriptionRef={descriptionRef}
+        headingRef={headingRef}
+        clipPath="polygon(0 0, 100% 0, 100% 100%, 0% 100%)"
+        hfsize="50px"
         heading="<Notches on our belt>"
         hrmarl="485px"
         hrmarr="485px"
@@ -71,7 +133,7 @@ const Ome = () => {
           { word: "17 major projects", scolor: "#F7E2AD" },
           { word: "3 research papers", scolor: "#F7E2AD" },
         ]}
-        description="<br><br>We at Numerates believe in skill-set building through experience and<br> hard work. This club brought in various project and research work, in<br> order to help its members in growing their understanding and<br> knowledge. In the last year, the club has undertaken 17 major projects<br> and 3 research papers have been published.
+        description="<br><br>We at Numerates believe in skill-set building through experience and<br> hard work.<br> This club brought in various project and research work, in<br> order to help its members in growing their understanding and<br> knowledge.<br> In the last year, the club has undertaken 17 major projects<br> and 3 research papers have been published.
       <br><br>"
         color="#fff"
       />

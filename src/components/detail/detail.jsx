@@ -1,7 +1,9 @@
 import React from 'react';
 import './detail.css';
 
-const Details = ({ count, hfsize, heading,fds, description, hrmarl, hrmarr, pos, hrenable, spcolor, color, wordColors, marginLeft, marginRight }) => {
+const Details = React.forwardRef((props, ref) => {
+
+  const { count, hfsize, heading,fds, description, hrmarl, hrmarr, pos, hrenable, spcolor, color, wordColors, marginLeft, marginRight, headingRef, descriptionRef, clipPath } = props;
 
   const getDescriptionWithColoredWords = () => {
     let modifiedDescription = description || '';
@@ -35,13 +37,13 @@ const Details = ({ count, hfsize, heading,fds, description, hrmarl, hrmarr, pos,
   return (
     <div className="details-container" style={{ marginLeft: marginLeft, marginRight: marginRight, textAlign: pos }}>
 
-      <p className="center q" style={{ color: spcolor, fontSize: hfsize, display: hrenable }}>{heading}</p>
+      <p ref={headingRef} className="center q" style={{ color: spcolor, fontSize: hfsize, display: hrenable, clipPath: clipPath }}>{heading}</p>
       <hr style={{ display: hrenable, marginLeft: hrmarl, marginRight: hrmarr, borderColor: spcolor }} />
       {br()}
       <br></br>
-      <p className="center c" style={{ color: color, fontSize:fds }} dangerouslySetInnerHTML={getDescriptionWithColoredWords()} />
+      <p ref={descriptionRef} className="center c" style={{ color: color, fontSize:fds }} dangerouslySetInnerHTML={getDescriptionWithColoredWords()} />
     </div>
   );
-};
+});
 
 export default Details;
