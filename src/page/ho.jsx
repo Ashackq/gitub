@@ -9,8 +9,6 @@ import TextPlugin from "gsap/TextPlugin";
 import SplitType from "split-type";
 
 
-
-
 const cardData = [
   [
     [
@@ -109,7 +107,9 @@ const Ome = () => {
         {<img className="cover" src={cover} alt="loo" />}
         <div className="centered">
           <h1 className="heading anim">Welcome to Numerates</h1>
+
           <div className="intro-wrapper">
+
             <span className="snap l">&lt;&lt;</span>
             <p>
               we dont differentiate <br />
