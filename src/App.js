@@ -36,8 +36,8 @@ const App = () => {
           />
           {/* <Route path="/:eventId" element={<Lth handleLogin={handleLogin}/>} /> */}
         </Routes>
-      </BrowserRouter>
         <Footer />
+      </BrowserRouter>
       <footer />
     </>
   );

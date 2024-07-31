@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./footer.css";
-// import "../team/team.css";
 import linke from "../../ass/in.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [hoveredIndex, setHovedIndex] = useState(null);
+
+  const links = ["About", "Events", "Teams", "Con", "Fut"];
+
   const devs = [
     {
       id: 1,
@@ -12,7 +16,20 @@ const Footer = () => {
       photo: "tanmaygadge.jpg",
       linkedIn: "https://www.linkedin.com/in/tanmay-gadge-377b9625b/",
     },
-    
+    {
+      id: 2,
+      name: "Sample 1",
+      role: "Role 1",
+      photo: "sample1.jpg",
+      linkedIn: "",
+    },
+    {
+      id: 3,
+      name: "sample 2",
+      role: "Role 2",
+      photo: "sample2.jpg",
+      linkedIn: "",
+    },
   ];
 
   return (
@@ -24,7 +41,7 @@ const Footer = () => {
             <div key={member.name} className="team-member">
               <div className="img-container">
                 <img
-                  src={require(`../team/photos/${member.photo}`)}
+                  src={require(`./photos/${member.photo}`)}
                   alt={member.name}
                 />
                 <div className="linkedin-cover">
@@ -42,6 +59,58 @@ const Footer = () => {
               <p>{member.role}</p>
             </div>
           ))}
+        </div>
+
+        <div className="footer-links">
+          <p>
+            <Link to="/About">About</Link>
+          </p>
+          <p>
+            <Link to="/Event">Events</Link>
+          </p>
+          <p>
+            <Link to="/Teams">Teams</Link>
+          </p>
+          <p>
+            <Link to="/Con">Let's Connect</Link>
+          </p>
+          <p>
+            <Link to="/Fut">Future Plans</Link>
+          </p>
+        </div>
+        <div className="college-site"><Link to={"https://www.mitwpu.edu.in"} target="_blank">MIT - World Peace University</Link></div>
+        <div className="socials" style={{ textAlign: "center" }}>
+          <p className="link-heading">Follow us on: </p>
+          <div className="insta">
+            <img src={require("./logos/instagram.png")} />
+            &nbsp;
+            <span className="insta-link">
+              <Link
+                to={"https://www.instagram.com/mitwpunumerates/"}
+                target="_blank"
+              >
+                InstaGram
+              </Link>
+            </span>
+          </div>
+          &nbsp;
+          <div className="linkedIn">
+            <img src={require("./logos/linkedin.png")} />
+            <span className="linkedIn-link">
+              <Link
+                to={
+                  "https://www.linkedin.com/company/numerates-club/mycompany/"
+                }
+                target="_blank"
+              >
+                &nbsp;LinkedIn
+              </Link>
+            </span>
+          </div>
+        </div>
+        <div className="copyright" style={{ textAlign: "center" }}>
+          <p>© 2024 All Right Reserved</p>
+          <p>Website design and development by MIT-WPU.</p>
         </div>
       </footer>
     </>
