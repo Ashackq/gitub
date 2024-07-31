@@ -22,7 +22,8 @@
 
 span::selection {
   background-color: #fef5ea;
-}
+  color: #1c1a22;
+
 
 .details-container {
   position: relative;

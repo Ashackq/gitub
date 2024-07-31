@@ -1,0 +1,30 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    gap: 2rem;
+    padding-left: 20px;
+    justify-content: center;
+    color: white;
+}
+
+.image-container img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 25%;
+    float: left;
+    margin-right: 20px;
+}
+
+.footer-heading{
+    /* font-family: "Montserrat", sans-serif; */
+    /* font-family: "Libre Baskerville", serif; */
+    font-family: "Manrope", sans-serif;
+    text-align: center;
+    font-size: 25px;
+}
+
+.dev-details{
+    font-family: "Poppins", sans-serif;
+}
