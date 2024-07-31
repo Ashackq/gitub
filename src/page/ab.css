@@ -73,7 +73,12 @@
   font-weight: 500;
   line-height: 30.72px;
   letter-spacing: 9px;
-  font-family: "lora";
+  /* font-family: "Bricolage Grotesque", sans-serif; */
+  font-family: "Urbanist", sans-serif;
+  /* font-family: "lora"; */
+}
+.intro-wrapper{
+  margin-top: 40px;
 }
 
 .snap{

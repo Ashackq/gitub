@@ -8,3 +8,4 @@ export { default as D } from './events/dashboard';
 export { default as PParty } from './events/confpointer';
 export { default as Card } from './card/card';
 export { default as Hero } from './Hero';
+export {default as Footer} from './footer/footer';
