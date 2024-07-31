@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
         <div className="college-site"><Link to={"https://www.mitwpu.edu.in"} target="_blank">MIT - World Peace University</Link></div>
         <div className="socials" style={{ textAlign: "center" }}>
-          <p className="heading">Follow us on: </p>
+          <p className="link-heading">Follow us on: </p>
           <div className="insta">
             <img src={require("./logos/instagram.png")} />
             &nbsp;
