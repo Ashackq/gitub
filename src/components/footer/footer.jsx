@@ -18,47 +18,50 @@ const Footer = () => {
     },
     {
       id: 2,
-      name: "Sample 1",
-      role: "Role 1",
+      name: "Akash Patel",
+      role: "Web Developer",
       photo: "sample1.jpg",
       linkedIn: "",
     },
     {
       id: 3,
-      name: "sample 2",
-      role: "Role 2",
+      name: "Could Be You",
+      role: "..",
       photo: "sample2.jpg",
-      linkedIn: "",
+      linkedIn:
+        "https://docs.google.com/forms/d/1PzCzz3t5MQFG8l9ogD1G_qkYoOIoMVMObfKH2hhrU5w/edit",
     },
   ];
 
   return (
     <>
       <footer className="footer">
-        <h1 className="footer-heading">Our Developers: </h1>
-        <div className="team-members">
-          {devs.map((member) => (
-            <div key={member.name} className="team-member">
-              <div className="img-container">
-                <img
-                  src={require(`./photos/${member.photo}`)}
-                  alt={member.name}
-                />
-                <div className="linkedin-cover">
-                  <img id="linke" src={linke} alt="loo" />
-                  <a
-                    href={member.linkedIn}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    LinkedIn
-                  </a>
+        <div className="team">
+          <h1 className="footer-heading">Our Developers: </h1>
+          <div className="team-members">
+            {devs.map((member) => (
+              <div key={member.name} className="team-member">
+                <div className="img-container">
+                  <img
+                    src={require(`./photos/${member.photo}`)}
+                    alt={member.name}
+                  />
+                  <div className="linkedin-cover">
+                    <img id="linke" src={linke} alt="loo" />
+                    <a
+                      href={member.linkedIn}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinkedIn
+                    </a>
+                  </div>
                 </div>
+                <h2>{member.name}</h2>
+                <p>{member.role}</p>
               </div>
-              <h2>{member.name}</h2>
-              <p>{member.role}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="footer-links">
@@ -78,7 +81,11 @@ const Footer = () => {
             <Link to="/Fut">Future Plans</Link>
           </p>
         </div>
-        <div className="college-site"><Link to={"https://www.mitwpu.edu.in"} target="_blank">MIT - World Peace University</Link></div>
+        <div className="college-site">
+          <Link to={"https://www.mitwpu.edu.in"} target="_blank">
+            MIT - World Peace University
+          </Link>
+        </div>
         <div className="socials" style={{ textAlign: "center" }}>
           <p className="link-heading">Follow us on: </p>
           <div className="insta">
@@ -110,7 +117,7 @@ const Footer = () => {
         </div>
         <div className="copyright" style={{ textAlign: "center" }}>
           <p>© 2024 All Right Reserved</p>
-          <p>Website design and development by MIT-WPU.</p>
+          <p>Website design and development by Numerates.</p>
         </div>
       </footer>
     </>

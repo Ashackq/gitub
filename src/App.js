@@ -3,7 +3,6 @@ import { Navbar, Team, D, Footer } from "./components";
 import { A, H, E, F, C, Lth, Congo, Foot } from "./page";
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 
-
 import "./App.css";
 
 const App = () => {
@@ -38,7 +37,6 @@ const App = () => {
         </Routes>
         <Footer />
       </BrowserRouter>
-      <footer />
     </>
   );
 };

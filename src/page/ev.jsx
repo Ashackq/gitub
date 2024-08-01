@@ -10,13 +10,26 @@ const Ev = () => {
       <div class="ll">
         <Time
           events={[
-            { name: "Pi Day", date: "2024-03-14T14:00:00", id: 1 },
             {
-              name: "Finxpo",
-              date: "2024-04-15T14:00:00",
+              name: "Recruitment",
+              date: "2024-08-20T14:00:00",
+              id: 2,
+              link: "https://docs.google.com/forms/d/1PzCzz3t5MQFG8l9ogD1G_qkYoOIoMVMObfKH2hhrU5w/edit",
+            },
+            {
+              name: "Olympiad",
+              date: "2024-09-22T14:00:00",
               id: 2,
               link: "https://phsykick.web.app/",
             },
+
+            {
+              name: "Finxpo",
+              date: "2025-02-14T14:00:00",
+              id: 2,
+              link: "https://phsykick.web.app/",
+            },
+            { name: "Pi Day", date: "2025-03-14T14:00:00", id: 1 },
           ]}
         />
       </div>

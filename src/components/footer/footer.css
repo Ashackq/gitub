@@ -2,13 +2,18 @@
   display: flex;
   flex-direction: column;
   background-color: black;
-  gap: 2rem;
+  gap: 0rem;
   padding-left: 20px;
   justify-content: center;
   color: white;
   width: 100vw;
+  height: "auto";
 }
-
+.team {
+  margin-top: -200px;
+  position: relative;
+  top: 200px;
+}
 .image-container img {
   width: 150px;
   height: 150px;
@@ -30,11 +35,13 @@
   font-family: "Poppins", sans-serif;
 }
 
-.footer-links p:hover, .college-site:hover {
+.footer-links p:hover,
+.college-site:hover {
   text-decoration: underline;
 }
 
-.footer-links, .college-site {
+.footer-links,
+.college-site {
   padding-left: 4rem;
   /* padding-top: 2rem ; */
 }
